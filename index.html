@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="my">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>လူ့သဘော လူ့မနော</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@100;200;300;400;500;600;700;800;900&family=Play:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            margin: 40px;
+
+            font-family: "Noto Sans Myanmar", serif;
+            font-weight: 400;
+            font-style: normal;
+            background-color: #f8f9fa;
+            text-align: left;
+            white-space: normal;
+            /* Allows text to wrap */
+            word-break: break-word;
+            /* Breaks long words if they exceed the container width */
+            overflow-wrap: break-word;
+            /* Ensures words break correctly */
+            resize: none;
+            /* Optional: Prevents resizing */
+            font-size: 20px;
+        }
+
+        .content {
+            text-align: left;
+            padding-left: 50px;
+            padding-right: 50px;
+
+
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            height: fit-content;
+        }
+
+        /* Media query for mobile (screens smaller than 768px) */
+        @media (max-width: 768px) {
+            body {
+                margin: 20px;
+            }
+
+            .content {
+                padding-left: 0px;
+                padding-right: 0px;
+                background-color: #f8f9fa;
+                border-radius: 0px;
+                box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+            }
+        }
+
+        /* Media query for tablet or smaller screens (768px to 1024px) */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .content {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* Sidebar styles (initially hidden) */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -200px;
+            /* Hide the sidebar off-screen */
+            width: 200px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            padding-top: 20px;
+            transition: left 0.3s ease;
+            /* Smooth transition */
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            border-bottom: 1px solid #444;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* Button to toggle the sidebar */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1001;
+            background-color: transparent;
+            /* Remove background color */
+        }
+
+        /* Hover state - no background color change */
+        .toggle-btn:hover {
+            background-color: transparent;
+            /* Ensure no background color on hover */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="t1.html">Introduction</a>
+    </div>
+
+    <!-- Button to toggle the sidebar -->
+    <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1 id="home"> လူ့သဘော လူ့မနော အနှစ်ချုပ် </h1>
+        <h1 id="home"> The Concise Laws of Human Nature</h1>
+        <p>
+            လူမှုပေါင်းသင်းဆက်ဆံရေးဆိုင်ရာ မဟာနည်းဗျူဟာ၊ အုပ်ချုပ်ရေးနင့် <nobr>စီမံခန့်ခွဲရေးဆိုင်ရာ</nobr>
+            ဩဇာအာဏာနှင့်
+            မာယာပရိယာယ်
+            နည်းစနစ်များဆိုင်ရာ အကြောင်းအရာများကို သုတေသနပြု၊ အထူးစိစစ်ပြုစုရေးသားလေ့ရှိသော
+            တက်ကျမ်းပညာရှင်အမေရိကန် <nobr>စာရေးသူ</nobr>
+            ဖြစ်ပါသည်။ </p>
+
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.querySelector('.sidebar');
+            var content = document.querySelector('.content');
+
+            // Check if sidebar is off-screen or visible
+            if (sidebar.style.left === '-200px' || sidebar.style.left === '') {
+                sidebar.style.left = '0'; // Show sidebar
+                content.style.marginLeft = '200px'; // Shift content to the right
+            } else {
+                sidebar.style.left = '-200px'; // Hide sidebar
+                content.style.marginLeft = '0'; // Restore content
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
